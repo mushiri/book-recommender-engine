@@ -1,0 +1,18 @@
+{% extends 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+    <head>
+        <link rel="stylesheet" href="static/css/index.css">
+        <title>Book Recommender System</title>
+    </head>
+    {% endblock %}
+    {% block body %}
+        <body>
+            <a href={{ url_for('popularity_based') }}><button class="block">Simple Recommender</button></a>
+            <a href={{ url_for('content_based') }}><button class="block">Content-based</button></a>
+            <a href={{ url_for('collaborative_filtering') }}><button class="block">Collaborative filtering-based</button></a>
+        </body>
+    {% endblock %}
+</html>

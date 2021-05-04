@@ -1,0 +1,19 @@
+body {
+  margin:0;
+  font-family: Arial, serif
+}
+
+.navbar{
+  overflow: hidden;
+  background-color: #333;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.fa-home, .fa-arrow-left {
+  color: #4CAF50;
+}

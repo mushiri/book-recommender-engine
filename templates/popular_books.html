@@ -1,0 +1,43 @@
+{% extends 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+    <head>
+        <link rel="stylesheet" href="static/css/cards.css">
+        <title>Popularity-based</title>
+    </head>
+    {% endblock %}
+    {% block navbar_title %}
+        <p>Popular Books</p>
+    {% endblock %}
+    {% block home_button %}
+        <a href={{ url_for('index') }}><i class="fa fa-home fa-lg"></i></a>
+    {% endblock %}
+    {% block body %}
+        <body>
+            <ul>
+                {% for i in range(n) %}
+                    <div class="cards">
+                        <div>
+                            <img width="10%" src={{popular_books['image_url'][i]}}>
+                        </div>
+                        <div>
+                            <a href={{popular_books['id'][i]}} target="_blank">Goodreads Link</a>
+                        </div>
+                        <div>
+                            <h4>Title: {{popular_books['title'][i]}}</h4>
+                            <h4>Author: {{popular_books['author'][i]}}</h4>
+                            <h4>Weighted Rating: {{popular_books['rating'][i]}}/5.0</h4>
+                            <h4>Year of Publication: {{popular_books['year'][i]}}</h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </ul>
+        </body>
+    {% endblock %}
+</html>
+
+
+
+

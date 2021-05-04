@@ -1,0 +1,57 @@
+{% extends 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+    <head>
+        <link rel="stylesheet" href="static/css/tables.css">
+        {% block title %}
+            <title>Collaborative-Filtering</title>
+        {% endblock %}
+    </head>
+    {% endblock %}
+    {% block navbar_title %}
+        <p>Books suggested to user {{ user_id }}</p>
+    {% endblock %}
+    {% block home_button %}
+        <a href={{ url_for('index') }}><i class="fa fa-home fa-lg"></i></a>
+    {% endblock %}
+    {% block return_button %}
+        <a href={{ url_for('collaborative_filtering') }}><i class="fa fa-arrow-left fa-lg"></i></a>
+    {% endblock %}
+    {% block body %}
+        <body>
+        <h3>User Information</h3>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Rating</th>
+            </tr>
+            {% for i in range(n) %}
+                <tr>
+                    <td>{{information['user_titles'][i]}}</td>
+                    <td>{{information['user_ratings'][i]}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <h3>Suggested Books to User</h3>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Estimated Score</th>
+            </tr>
+            {% for i in range(m) %}
+                <tr>
+                    <td>{{information['est_titles'][i]}}</td>
+                    <td>{{information['est_scores'][i]}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </body>
+    {% endblock %}
+</html>
+
+
+
+

@@ -1,0 +1,48 @@
+{% extends 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+    <head>
+        <link rel="stylesheet" href="static/css/cards.css">
+        {% block title %}
+            <title>Content-based</title>
+        {% endblock %}
+    </head>
+    {% endblock %}
+    {% block navbar_title %}
+        <p>Books Similar to {{ title }}</p>
+    {% endblock %}
+    {% block home_button %}
+       <a href={{ url_for('index') }}><i class="fa fa-home fa-lg"></i></a>
+    {% endblock %}
+    {% block return_button %}
+        <a href={{ url_for('content_based') }}><i class="fa fa-arrow-left fa-lg"></i></a>
+    {% endblock %}
+    {% block body %}
+        <body>
+            <ul>
+                {% for i in range(n) %}
+                    <div class="cards">
+                        <div>
+                            <img width="10%" src={{similar_books['image_url'][i]}}>
+                        </div>
+                        <div>
+                            <a href={{similar_books['id'][i]}} target="_blank">Goodreads Link</a>
+                        </div>
+                        <div>
+                            <h4>Title: {{similar_books['title'][i]}}</h4>
+                            <h4>Author: {{similar_books['author'][i]}}</h4>
+                            <h4>Similarity: {{similar_books['similarity'][i]}}/1.0</h4>
+                            <h4>Year of Publication: {{similar_books['year'][i]}}</h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </ul>
+        </body>
+    {% endblock %}
+</html>
+
+
+
+

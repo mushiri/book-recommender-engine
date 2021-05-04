@@ -1,0 +1,34 @@
+{% extends 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+    <head>
+        <link rel="stylesheet" href="static/css/content_based.css">
+        {% block title %}
+            <title>Content-based</title>
+        {% endblock %}
+    </head>
+    {% endblock %}
+    {% block navbar_title %}
+        <p>Search for Similar Books</p>
+    {% endblock %}
+    {% block home_button %}
+        <a href={{ url_for('index') }}><i class="fa fa-home fa-lg"></i></a>
+    {% endblock %}
+    {% block body %}
+    <body>
+    <form action="{{ url_for('content_based_results') }}" method="post">
+       <div class="form-control">
+           <input type="text" name="title" class="form-control" placeholder="Book Title" value="" required list="titles">
+           <button class="btn btn-primary btn-sbmit" type="submit">Recommend</button>
+       </div>
+    </form>
+    <datalist id="titles">
+        {% for i in range(n) %}
+            <option>{{ titles[i] }}</option>
+        {% endfor %}
+    </datalist>
+    </body>
+    {% endblock %}
+</html>

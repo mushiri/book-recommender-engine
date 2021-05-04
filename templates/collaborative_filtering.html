@@ -1,0 +1,34 @@
+{% extends 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+    <head>
+        <link rel="stylesheet" href="static/css/collaborative_filtering.css">
+        {% block title %}
+            <title>Collaborative Filtering</title>
+        {% endblock %}
+    </head>
+    {% endblock %}
+    {% block navbar_title %}
+        <p>Model-based Collaborative Filtering Using SVD</p>
+    {% endblock %}
+    {% block home_button %}
+        <a href={{ url_for('index') }}><i class="fa fa-home fa-lg"></i></a>
+    {% endblock %}
+    {% block body %}
+    <body>
+    <form action="{{ url_for('collaborative_filtering_results') }}" method="post">
+       <div class="form-control">
+           <input type="number" min="1" name="user_id" class="form-control" placeholder="User id" value="" required list="user_ids">
+           <button class="btn btn-primary btn-sbmit" type="submit">Recommend</button>
+       </div>
+    </form>
+    <datalist id="user_ids">
+        {% for i in range(n) %}
+            <option>{{ user_ids[i] }}</option>
+        {% endfor %}
+    </datalist>
+    </body>
+    {% endblock %}
+</html>
