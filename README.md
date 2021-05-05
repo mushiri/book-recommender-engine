@@ -2,7 +2,7 @@
 
 The following project is about recommendation systems. More specifically, recommendation systems
 used for books. The following steps are used for running the application. In addition, there is a PythonAnywhere website that can be accessed to anyone.
-I have used Pycharm (Python IDE) when developing the web app. 
+I have used Pycharm (Python IDE) when developing the web app. All the commands used here are for macOS.
 
 **Running the Code Locally**
 - Make sure that the `pip` command is installed
