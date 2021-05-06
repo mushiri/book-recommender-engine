@@ -14,6 +14,11 @@ I have used Pycharm (Python IDE) when developing the web app. All the commands u
 - Run the app using `flask run`
 - Proceed to http://127.0.0.1:5000/ to view the application (it takes some time to load)
 
+**Running the analyis.py**
+
+Part of the project is analyzing a dataset. In the report, figures were generated using this file. To run this file use the command `python3 analysis.py`
+(it may take a while to load)
+
 **PythonAnywhere Website**
 
 The code is also available for the public and can be accessed through https://bookrecommenderengine.pythonanywhere.com/
